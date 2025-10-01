@@ -95,6 +95,6 @@ def main():
     print(f"✅ Sandbox repo created: {repo.full_name}")
     return 0
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     exit_code = main()
     sys.exit(exit_code)
