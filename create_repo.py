@@ -11,7 +11,7 @@ if _name_ == "_main_":
     repo_name = f"libelle-sandbox-{volunteer}"
 
     # 1. Create repo
-    repo = org.create_repo(repo_name, private=True, auto_init=True)
+    repo = user.create_repo(repo_name, private=True, auto_init=True)
 
     # 2. Add README
     repo.create_file("README.md", "add README", f"# Welcome {volunteer}!\nHappy hacking 🚀")
