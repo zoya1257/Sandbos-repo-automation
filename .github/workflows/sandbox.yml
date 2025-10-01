@@ -1,0 +1,28 @@
+name: Create Sandbox Repo
+
+on:
+  workflow_dispatch:
+    inputs:
+      volunteer_username:
+        description: "Volunteer GitHub username"
+        required: true
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install PyGithub
+
+      - name: Run script
+        run: python create_repo.py ${{ github.event.inputs.volunteer_username }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
