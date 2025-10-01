@@ -2,7 +2,7 @@ import sys
 import os
 from github import Github
 
-if _name_ == "_main_":
+if __name_ == "_main_":
     volunteer = sys.argv[1]
     token = os.getenv("GH_TOKEN")
     g = Github(token)
